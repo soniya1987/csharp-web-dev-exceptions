@@ -12,7 +12,15 @@ namespace Unit1_TempExceptions
             string inputValue = Console.ReadLine();
             double inputTemp = Double.Parse(inputValue);
 
-            Temperature userTemp = new Temperature(inputTemp);
+            try
+            {
+                Temperature userTemp = new Temperature(inputTemp);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            
         }
     }
 }

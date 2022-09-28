@@ -9,7 +9,14 @@ namespace TemperatureExceptions
 
         public Temperature(double fahrenheit)
         {
-            Fahrenheit = fahrenheit;
+            try
+            {
+                Fahrenheit = fahrenheit;
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                Fahrenheit = -459.67;
+            }
         }
 
         public double Fahrenheit
